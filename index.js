@@ -24,6 +24,7 @@ testListRef.on('value', function(snapshot) {
 });*/
 
 var canSubmit = true;
+var sending = false;
 window.submitTest = function() {
   if (!currentUser) {
     return alert('Inserisci il tuo nome e cognome!');
@@ -37,11 +38,19 @@ window.submitTest = function() {
     canSubmit = true;
   }, 10 * 1000);
   
+  sending = true;
+  
   firebase.database().ref('submissions').push({
     user: currentUser,
     result: document.documentElement.innerHTML
   });
 }
+firebase.database().ref('submissions').on('child_added', function(data) {
+  if (sending && data.val().user === currentUser) {
+    alert('Il tuo test è stato inviato con successo.');
+    sending = false;
+  }
+});
 
 /* DOM */
 var div = document.createElement('div');
