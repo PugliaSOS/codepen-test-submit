@@ -1,1 +1,0 @@
-$('#test4-content').html('<div class="text-box text-blue"><p>Questo testo deve essere blu</p></div><div class="text-box text-yellow-red"><p>Questo testo deve essere giallo</p><p>Questo testo deve essere rosso</p></div>');
