@@ -54,12 +54,13 @@ firebase.database().ref('submissions').on('child_added', function(data) {
 
 /* DOM */
 var div = document.createElement('div');
-div.style.position = 'absolute';
+div.style.position = 'fixed';
 div.style.left = '0';
 div.style.width = '100%';
 div.style.bottom = 0;
 div.style.height = '50px';
 div.style.border = '1px solid black';
+document.body.style.paddingBottom = '60px';
 
 //
 var input = document.createElement('input');
