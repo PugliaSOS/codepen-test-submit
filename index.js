@@ -27,7 +27,7 @@ var canSubmit = true;
 var sending = false;
 window.submitTest = function() {
   if (!currentUser) {
-    return alert('Inserisci il tuo nome e cognome!');
+    return alert('Inserisci la tua email!');
   }
   if (!canSubmit) {
     return alert('Hai abbena inviato un risultato, aspetta qualche secondo prima di inviarne un altro!');
@@ -63,7 +63,7 @@ div.style.border = '1px solid black';
 
 //
 var input = document.createElement('input');
-input.setAttribute('placeholder', 'Inserisci il tuo nome e cognome');
+input.setAttribute('placeholder', 'Inserisci la tua email');
 input.style.width = '80%';
 input.style.height = '100%';
 input.style.boxSizing = 'border-box';
