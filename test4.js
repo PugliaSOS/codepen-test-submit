@@ -1,0 +1,1 @@
+$('#test4-content').html('<div class="button-box button-box-blue"><button>Questo bottone deve essere blu</button></div><div class="button-box button-yellow-red"><button>Questo bottone deve essere giallo</button><br><button>Questo bottone deve essere rosso</button></div>');
