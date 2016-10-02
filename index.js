@@ -23,10 +23,20 @@ testListRef.on('value', function(snapshot) {
   }
 });*/
 
+var canSubmit = true;
 window.submitTest = function() {
   if (!currentUser) {
     return alert('Inserisci il tuo nome e cognome!');
   }
+  if (!canSubmit) {
+    return alert('Hai abbena inviato un risultato, aspetta qualche secondo prima di inviarne un altro!');
+  }
+  
+  canSubmit = false;
+  setTimeout(function() {
+    canSubmit = true;
+  }, 10 * 1000);
+  
   firebase.database().ref('submissions').push({
     user: currentUser,
     result: document.documentElement.innerHTML
